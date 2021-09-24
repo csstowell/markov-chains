@@ -13,7 +13,7 @@ def open_and_read_file(filepath):
 
     file = open(filepath)
     text = file.read()
-    file.close()
+    file.close() # why do we need this?
 
     return text
 
@@ -42,16 +42,22 @@ def make_chains(text_string):
         >>> chains[('there','juanita')]
         [None]
     """
-
+    # empty dictionary 
     chains = {}
 
+    # split : read the file as a single string
+    # # # # # # new word list =
     words = text_string.split()
 
     # To set a stop point, append None to the end of our word list.
-
     words.append(None)
 
+    # loop over a list by index:
+    # # range from 0 to n-1
+    # # # for index in length of word list -2
+
     for i in range(len(words) - 2):
+        # set key = 
         key = (words[i], words[i + 1])
         value = words[i + 2]
 
